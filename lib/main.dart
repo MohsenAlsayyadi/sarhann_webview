@@ -2,7 +2,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_file_downloader/flutter_file_downloader.dart';
-
 import 'package:permission_handler/permission_handler.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'firebase_options.dart';
@@ -80,7 +79,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Future<void> _downloadFile(String url) async {
     FileDownloader.downloadFile(
-        url:url
+      url: url,
+      notificationType: NotificationType.all,
     );
   }
 
